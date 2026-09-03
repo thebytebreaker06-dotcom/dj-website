@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music — Int'L DJ Experience</title>
+  <meta name="description" content="Stream and download the latest Amapiano, Afrobeats, Asakaa, and Afro-house mixtapes from Int'L DJ Experience.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">Int'L DJ Experience</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html" class="active">Music</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="page-wrap">
+
+      <div class="music-header">
+        <h1>Music</h1>
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search mixtapes..."
+          aria-label="Search mixtapes"
+        >
+      </div>
+
+      <div class="hub-grid">
+
+        <div class="hub-main">
+
+                    <article class="featured">
+            <div class="featured-img">
+              <img src="images/ghana-meet-naija-tiktok-mix.png" alt="Ghana Meet Naija Street TikTok Dance MixTape cover art">
+              <span class="featured-badge">New mix</span>
+            </div>
+            <div class="featured-body">
+              <p class="featured-eyebrow">Afrobeats</p>
+              <h2 class="featured-title">Ghana Meet Naija Street TikTok Dance MixTape</h2>
+              <p class="featured-meta">60.5 MB</p>
+              <div class="card-actions">
+                <button class="btn btn-secondary btn-small play-btn" data-audio="mixes/ghana-meet-naija-tiktok-mix.mp3" data-title="Ghana Meet Naija Street TikTok Dance MixTape">▶ Play</button>
+                <a href="mixes/ghana-meet-naija-tiktok-mix.mp3" download class="btn btn-primary btn-small">Download</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="grid-label-row">
+            <h2 class="grid-title">Latest mixtapes</h2>
+          </div>
+
+          <div class="mix-grid">
+
+            <!--
+              Add more mixtapes by copying this block inside .mix-grid.
+              Match mix-art / mix-tag classes to the genre:
+              mix-art--amapiano, mix-art--afrohouse, mix-art--asakaa, mix-art--afrobeats
+
+              <article class="mix-card">
+                <div class="mix-art mix-art--afrobeats">
+                  <img src="images/your-filename.jpg" alt="Your mixtape title cover art">
+                  <span class="mix-tag mix-tag--afrobeats">Afrobeats</span>
+                </div>
+                <div class="mix-info">
+                  <p class="mix-title">Your Mixtape Title</p>
+                  <p class="mix-meta">Duration · BPM</p>
+                  <a href="mixes/your-filename.mp3" download class="download-link">Download</a>
+                </div>
+              </article>
+            -->
+
+          </div>
+
+          <p class="section-intro" style="text-align:center;">More mixtapes dropping soon — check back for updates.</p>
+
+          <div class="load-more" hidden>
+            <button class="btn-outline">Load more mixes</button>
+          </div>
+
+        </div>
+
+        <aside class="hub-sidebar">
+
+          <div class="sidebar-card">
+            <p class="sidebar-title">Follow the sound</p>
+            <p class="sidebar-text">New mixes, tour dates, and behind-the-scenes drop here first.</p>
+            <div class="social-row">
+              <a href="#" class="social-dot social-dot--ig">IG</a>
+              <a href="#" class="social-dot social-dot--yt">YT</a>
+              <a href="#" class="social-dot social-dot--x">X</a>
+              <a href="#" class="social-dot social-dot--tt">TT</a>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <p class="sidebar-title">Genres</p>
+            <div class="tag-cloud">
+              <span class="tag-pill">Afrobeats <span class="tag-count">1</span></span>
+              <span class="tag-pill">Amapiano <span class="tag-count">0</span></span>
+              <span class="tag-pill">Asakaa <span class="tag-count">0</span></span>
+              <span class="tag-pill">Afro-house <span class="tag-count">0</span></span>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  <p>&copy; 2026 Int'L DJ Experience. All rights reserved.</p>
+</footer>
+
+<div class="now-playing" hidden>
+  <div class="now-playing-info">
+    <p class="now-playing-title">—</p>
+  </div>
+  <button class="now-playing-toggle" aria-label="Play or pause">▶</button>
+  <span class="now-playing-time now-playing-current">0:00</span>
+  <input type="range" class="now-playing-seek" min="0" max="100" value="0" aria-label="Seek">
+  <span class="now-playing-time now-playing-duration">0:00</span>
+  <button class="now-playing-mute" aria-label="Mute or unmute">🔊</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
