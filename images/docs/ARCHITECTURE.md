@@ -105,3 +105,4 @@ already be allowed to do, it's public.
 | Phase 3 | Hit Supabase platform outage during project creation | External issue, not user error — confirmed via status.supabase.com; paused Phase 3, moved to independent Phase 8 work while waiting |
 | Phase 4 | Designed `mixtapes` table schema (8 columns, `bpm` removed at user's request) | Kept to only what's needed now; more tables (events, gallery) deferred to Phase 11 |
 | Phase 8 | Created Cloudinary account | Confirmed cloud name, API key (public-safe) and API secret (private, viewed but not shared) |
+| Phase 3 | Considered switching to Firebase during outage; decided to wait instead | Firebase would trade SQL (Postgres) for NoSQL (Firestore) — a real architectural cost, not just a swap. Supabase outage judged temporary; worth waiting rather than compromising the schema/skill goals |
