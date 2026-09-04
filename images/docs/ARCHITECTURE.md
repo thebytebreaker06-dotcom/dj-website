@@ -90,8 +90,8 @@ already be allowed to do, it's public.
 
 ## 5. Current resources
 
-- **Supabase project:** created (Phase 3, Step 1) — empty, no tables yet
-- **Cloudinary account:** not yet created
+- **Supabase project:** blocked — Supabase platform outage (project creation failing as of Sep 3, 2026). Retry pending.
+- **Cloudinary account:** ✅ created (Sep 4, 2026) — cloud name, API key, and API secret confirmed visible in dashboard. Not yet wired into any code.
 - **Netlify Functions:** not yet created
 
 ---
@@ -102,3 +102,6 @@ already be allowed to do, it's public.
 |---|---|---|
 | Phase 1 | Chose static site + Supabase + Cloudinary over full custom backend | Beginner-appropriate, free-tier friendly, still "real" architecture |
 | Phase 3 | Created Supabase project | First concrete backend resource — everything else references this |
+| Phase 3 | Hit Supabase platform outage during project creation | External issue, not user error — confirmed via status.supabase.com; paused Phase 3, moved to independent Phase 8 work while waiting |
+| Phase 4 | Designed `mixtapes` table schema (8 columns, `bpm` removed at user's request) | Kept to only what's needed now; more tables (events, gallery) deferred to Phase 11 |
+| Phase 8 | Created Cloudinary account | Confirmed cloud name, API key (public-safe) and API secret (private, viewed but not shared) |
