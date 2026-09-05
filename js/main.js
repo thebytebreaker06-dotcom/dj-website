@@ -218,3 +218,51 @@ audioPlayer.addEventListener('ended', () => {
     nowPlayingToggle.textContent = '▶';
   }
 });
+
+/* ==========================================================================
+   FEATURED MIXTAPE — loaded live from Supabase
+   Only runs on pages that actually have a featured mixtape section.
+   If the fetch fails, the existing static HTML stays visible untouched.
+   ========================================================================== */
+
+const SUPABASE_URL = 'https://thaplvdyndshndfxtwhf.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoYXBsdmR5bmRzaG5kZnh0d2hmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1MTI4NDMsImV4cCI6MjEwNDA4ODg0M30.Fzr16L6FuQfCShXyJ_O4osv52Utr4l11Y9pgYDxENqE';
+
+const featuredSection = document.querySelector('.featured');
+
+if (featuredSection) {
+  loadFeaturedMixtape();
+}
+
+async function loadFeaturedMixtape() {
+  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const { data, error } = await supabase
+    .from('mixtapes')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(1);
+
+  if (error || !data || data.length === 0) {
+    console.error('Could not load featured mixtape:', error);
+    return;
+  }
+
+  const mix = data[0];
+
+  featuredSection.querySelector('.featured-eyebrow').textContent = mix.genre;
+  featuredSection.querySelector('.featured-title').textContent = mix.title;
+  featuredSection.querySelector('.featured-meta').textContent = `${mix.file_size_mb} MB`;
+
+  const img = featuredSection.querySelector('.featured-img img');
+  img.src = mix.cover_image_url;
+  img.alt = `${mix.title} cover art`;
+
+  const playBtn = featuredSection.querySelector('.play-btn');
+  playBtn.dataset.audio = mix.audio_url;
+  playBtn.dataset.title = mix.title;
+
+  const downloadLink = featuredSection.querySelector('a[download]');
+  downloadLink.href = mix.audio_url;
+}
